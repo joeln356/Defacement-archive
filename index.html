@@ -8,16 +8,14 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-
         @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-
         @import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
+
         body {
             margin: 0;
             padding: 0;
             background: black;
             overflow: hidden;
-        
             text-align: center;
         }
 
@@ -29,8 +27,10 @@
             height: 100%;
             display: flex;
             justify-content: center;
-            align-items: center; 
+            align-items: center;
+            flex-direction: row;
         }
+
         .content {
             position: relative;
             z-index: 10;
@@ -39,7 +39,8 @@
             box-shadow: 20px 10px 10px 50px rgba(0, 0, 0, 0.911);
             border-radius: 10px;
         }
-        .titulo{
+
+        .titulo {
             font-family: "Oswald", sans-serif;
             font-weight: 900;
             font-style: normal;
@@ -48,7 +49,8 @@
             letter-spacing: 3px;
             margin: 10px 0px;
         }
-        .hack{
+
+        .hack {
             color: white;
             font-family: "Rubik Distressed", system-ui;
             font-weight: 400;
@@ -57,7 +59,8 @@
             margin: 0px;
             margin-bottom: 20px;
         }
-        .message{
+
+        .message {
             color: red;
         }
 
@@ -69,25 +72,67 @@
             height: 100vh;
             z-index: 1;
         }
-        #message{
+
+        #message {
             border: 3px solid rgb(165, 19, 19);
             width: 600px;
             margin: auto;
             font-family: "Exo 2", sans-serif;
             font-size: 15px;
         }
-        p{
+
+        p {
             color: white;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: white;
             font-weight: bolder;
         }
-        a:hover{
+
+        a:hover {
             text-decoration: underline;
         }
-    
+
+        /* Tela retrato padrão */
+        @media screen and (orientation: portrait) {
+            .titulo {
+                font-size: 24px;
+                letter-spacing: 1px;
+                margin: 10px 0px;
+            }
+        }
+
+        /* Responsivo para celulares */
+        @media screen and (max-width: 600px) {
+            .sim {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .titulo {
+                font-size: 18px;
+                letter-spacing: 1px;
+                margin: 5px 0;
+            }
+
+            .hack {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            #message {
+                width: 90%;
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .content {
+                padding: 8px;
+                box-shadow: 10px 5px 5px 20px rgba(0, 0, 0, 0.8);
+            }
+        }
     </style>
 
     <title>Sm4rtB1t5</title>
@@ -103,12 +148,10 @@
             <div id="message">
                 <h2 class="message">Message to Admin</h2>
                 <p>*Dear Admin Your Security is Low So The Website Is Completely Messed Up*</p>
-                
                 <p>*We Do Not Forgive*</p>
                 <p>Greet'z To: MuZ4ngui$54 - K!d!m4 - Lµ1z V!4n4</p>
                 <p>[+ <strong>NO SYSTEM IS SAFE</strong> +]</p>
                 <p>-#{  <a href="https://github.com/joeln356" target="_blank">Contact Me</a>  }#-</p>
-
             </div>
         </div>
     </div>
@@ -120,7 +163,7 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const fontSize = 18;
+        const fontSize = window.innerWidth < 600 ? 12 : 18; // menor no celular
         const columns = Math.floor(canvas.width / fontSize * 0.98);
         const drops = [];
 
