@@ -10,11 +10,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
+        
+        :root{
+
+            --titulo: #060;
+            --fungo: #000000;
+
+        }
 
         body {
             margin: 0;
             padding: 0;
-            background: black;
+            background: var(--fungo);
             overflow: hidden;
             text-align: center;
         }
@@ -34,7 +41,7 @@
         .content {
             position: relative;
             z-index: 10;
-            background-color: black;
+            background-color: var(--fungo);
             padding: 10px;
             box-shadow: 20px 10px 10px 50px rgba(0, 0, 0, 0.911);
             border-radius: 10px;
@@ -44,14 +51,14 @@
             font-family: "Oswald", sans-serif;
             font-weight: 900;
             font-style: normal;
-            color: #060;
+            color: var(--titulo);
             font-size: 3em;
             letter-spacing: 3px;
             margin: 10px 0px;
         }
 
         .hack {
-            color: white;
+            color: #ffffff;
             font-family: "Rubik Distressed", system-ui;
             font-weight: 400;
             font-style: normal;
@@ -61,7 +68,7 @@
         }
 
         .message {
-            color: red;
+            color: #ff0000;
         }
 
         canvas {
@@ -74,7 +81,7 @@
         }
 
         #message {
-            border: 3px solid rgb(165, 19, 19);
+            border: 3px solid #a51313;
             width: 600px;
             margin: auto;
             font-family: "Exo 2", sans-serif;
@@ -94,18 +101,42 @@
         a:hover {
             text-decoration: underline;
         }
-
-        /* Tela retrato padrão */
-        @media screen and (orientation: portrait) {
-            .titulo {
-                font-size: 24px;
-                letter-spacing: 1px;
-                margin: 10px 0px;
-            }
+        .mobile { display: none; }
+        .parex{
+            display: none;
         }
+        
+        /* Responsivo para Telefone em Pé */
+        @media screen and (orientation: portrait) {
 
-        /* Responsivo para celulares */
-        @media screen and (max-width: 600px) {
+            .titulo { display: none; }
+            .desa{
+            display: none;}
+            .parex{
+            display: block;}
+
+            .mobile {
+                font-family: "Oswald", sans-serif;
+                display: block; 
+                color: var(--titulo);
+                font-size: 22px;
+                font-weight: bolder;
+            }
+            .hack{
+                font-size: 20px;
+            }
+            #message{
+                width: 280px;
+            }
+            .message{
+                font-size: 14px;
+                font-weight: 900;
+            }
+            p{
+                font-size: 9.5px;
+            }
+            
+
           
         }
     </style>
@@ -118,12 +149,18 @@
     <canvas id="matrix"></canvas>
     <div class="sim">
         <div class="content">
+
             <h1 class="titulo">-[#~[!]_HaCkEd By: Sm4rtB1t5_[!]~#]-</h1>
+
+            <h1 class="mobile">-[#~[!]_HaCkEd By: Sm4rtB1t5_[!]~#]-</h1>
             <h1 class="hack">HACKED!!!</h1>
             <div id="message">
+
                 <h2 class="message">Message to Admin</h2>
-                <p>*Dear Admin Your Security is Low So The Website Is Completely Messed Up*</p>
+                <p class="parex">*Your Security is Low So The Website Is Completely Messed Up*</p>
+                <p class="desa">*Dear Admin Your Security is Low So The Website Is Completely Messed Up*</p>
                 <p>*We Do Not Forgive*</p>
+                
                 <p>Greet'z To: MuZ4ngui$54 - K!d!m4 - Lµ1z V!4n4</p>
                 <p>[+ <strong>NO SYSTEM IS SAFE</strong> +]</p>
                 <p>-#{  <a href="https://github.com/joeln356" target="_blank">Contact Me</a>  }#-</p>
