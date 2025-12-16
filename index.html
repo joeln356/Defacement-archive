@@ -144,72 +144,71 @@
     <title>Sm4rtB1t5</title>
 </head>
 
-<body>
+    <body>
 
-    <canvas id="matrix"></canvas>
-    <div class="sim">
-        <div class="content">
+        <canvas id="matrix"></canvas>
+        <div class="sim">
+            <div class="content">
 
-            <h1 class="titulo">-[#~[!]_HaCkEd By: Sm4rtB1t5_[!]~#]-</h1>
+                <h1 class="titulo">-[#~[!]_HaCkEd By: Sm4rtB1t5_[!]~#]-</h1>
 
-            <h1 class="mobile">-[#~[!]_HaCkEd By: Sm4rtB1t5_[!]~#]-</h1>
-            <h1 class="hack">HACKED!!!</h1>
-            <div id="message">
+                <h1 class="mobile">-[#~[!]_HaCkEd By: Sm4rtB1t5_[!]~#]-</h1>
+                <h1 class="hack">HACKED!!!</h1>
+                <div id="message">
 
-                <h2 class="message">Message to Admin</h2>
-                <p class="parex">*Your Security is Low So The Website Is Completely Messed Up*</p>
-                <p class="desa">*Dear Admin Your Security is Low So The Website Is Completely Messed Up*</p>
-                <p>*We Do Not Forgive*</p>
-                
-                <p>Greet'z To: MuZ4ngui$54 - K!d!m4 - Lµ1z V!4n4</p>
-                <p>[+ <strong>NO SYSTEM IS SAFE</strong> +]</p>
-                <p>-#{  <a href="https://github.com/joeln356" target="_blank">Contact Me</a>  }#-</p>
+                    <h2 class="message">Message to Admin</h2>
+                    <p class="parex">*Your Security is Low So The Website Is Completely Messed Up*</p>
+                    <p class="desa">*Dear Admin Your Security is Low So The Website Is Completely Messed Up*</p>
+                    <p>*We Do Not Forgive*</p>
+                    
+                    <p>Greet'z To: MuZ4ngui$54 - K!d!m4 - Lµ1z V!4n4</p>
+                    <p>[+ <strong>NO SYSTEM IS SAFE</strong> +]</p>
+                    <p>-#{  <a href="https://github.com/joeln356" target="_blank">Contact Me</a>  }#-</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        const canvas = document.getElementById("matrix");
-        const ctx = canvas.getContext("2d");
+        <script>
+            const canvas = document.getElementById("matrix");
+            const ctx = canvas.getContext("2d");
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+            // Ajuste para telas de alta densidade
+            const dpr = window.devicePixelRatio || 1;
+            canvas.width = window.innerWidth * dpr;
+            canvas.height = window.innerHeight * dpr;
+            ctx.scale(dpr, dpr);
 
-        const fontSize = window.innerWidth < 600 ? 12 : 18; // menor no celular
-        const columns = Math.floor(canvas.width / fontSize * 0.98);
-        const drops = [];
+            // Define fontSize proporcional e menor para Telefone
+            const fontSize = window.innerWidth < 600 ? 12 : 18; // 12px no Telefone, 18px no PC
+            const columns = Math.floor(canvas.width / (fontSize * dpr) * 0.98);
+            const drops = [];
 
-        for (let i = 0; i < columns; i++) {
-            drops[i] = Math.random() * canvas.height;
-        }
-
-        const chars = "$€¢£₽₨₩฿₺₮₱₭₴₦৲৳૱௹﷼₹₲₪₡₫₵₢₸₤₳₥₠₣₰ ₧ ₯ ₶ ₷ あ い う え お か き く け こ";
-        const charsArr = chars.split("");
-
-        function draw() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = "#00ff00";
-            ctx.font = fontSize + "px monospace";
-
-            for (let i = 0; i < drops.length; i++) {
-                const char = charsArr[Math.floor(Math.random() * charsArr.length)];
-                ctx.fillText(char, i * fontSize, drops[i] * fontSize);
-
-                drops[i]++;
-
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.random() * canvas.height;
             }
 
-            requestAnimationFrame(draw);
-        }
+            const chars = "$€¢£₽₨₩฿₺₮₱₭₴৳૱௹﷼₹₲₪₡₫₵₢₸₤₳₥₠₣₰₧₯₶₷あいう";
+            const charsArr = chars.split("");
 
-        draw();
-    </script>
+            function draw() {
+                ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+                ctx.fillRect(0, 0, canvas.width / dpr, canvas.height / dpr);
 
-</body>
+                ctx.fillStyle = "#00ff00";
+                ctx.font = fontSize + "px monospace";
 
+                for (let i = 0; i < drops.length; i++) {
+                    const char = charsArr[Math.floor(Math.random() * charsArr.length)];
+                    ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+
+                    drops[i]++;
+                    if (drops[i] * fontSize > canvas.height / dpr && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                }
+                requestAnimationFrame(draw);
+            }
+            draw();
+        </script>
+    </body>
 </html>
